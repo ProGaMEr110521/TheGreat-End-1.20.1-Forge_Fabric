@@ -1,0 +1,10 @@
+{
+  "endpoem_ru": {
+    "sounds": [
+      {
+        "name": "thegreatend:endpoem_ru",
+        "stream": true
+      }
+    ]
+  }
+}
