@@ -21,24 +21,6 @@ public abstract class MixinWinScreen {
 
     private boolean hasStartedPlaying = false;
 
-//    /**
-//     * Подменяет путь "texts/end.txt" на ваш custom путь
-//     */
-//    @ModifyArg(
-//            method = "init",
-//            at = @At(
-//                    value = "INVOKE",
-//                    target = "Lnet/minecraft/client/gui/screens/WinScreen;wrapCreditsIO(Ljava/lang/String;Lnet/minecraft/client/gui/screens/WinScreen$CreditsReader;)V"
-//            ),
-//            index = 0
-//    )
-//    private String modifyEndTextPath(String originalPath) {
-//        return "thegreatend:texts/end.txt";
-//    }
-
-    /**
-     * Подменяет путь "texts/end.txt" на ваш custom путь
-     */
     @ModifyArg(
             method = "init",
             at = @At(
