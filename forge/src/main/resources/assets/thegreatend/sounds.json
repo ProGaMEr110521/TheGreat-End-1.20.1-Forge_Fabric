@@ -1,8 +1,8 @@
 {
-  "endpoem_ru": {
+  "vpoem_ru_ru": {
     "sounds": [
       {
-        "name": "thegreatend:endpoem_ru",
+        "name": "thegreatend:vpoem_ru_ru",
         "stream": true
       }
     ]
