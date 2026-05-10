@@ -118,7 +118,6 @@ public abstract class MixinWinScreen {
     private void renderEndSky(GuiGraphics guiGraphics) {
         ShaderInstance customShader = ModShaders.getRendertypeEndPoem();
 
-        // Проверяем, что шейдер готов
         if (customShader == null || customShader.getId() <= 0) {
             return;
         }
@@ -131,12 +130,10 @@ public abstract class MixinWinScreen {
         float gameTime = (float) ((System.nanoTime() / 1000000L) % 10000000L) / 20.0f;
         float customTime = (float) (System.currentTimeMillis() % 10000000L) / 3000.0f;
 
-        // Устанавливаем юниформы
         customShader.safeGetUniform("GameTime").set(gameTime);
         customShader.safeGetUniform("CustomTime").set(customTime);
         customShader.safeGetUniform("EndPortalLayers").set(15);
 
-        // Применяем шейдер через RenderSystem
         RenderSystem.setShader(() -> customShader);
         RenderSystem.setShaderTexture(0, END_PORTAL);
         RenderSystem.setShaderTexture(1, END_PORTAL);
@@ -147,7 +144,6 @@ public abstract class MixinWinScreen {
         Tesselator tesselator = Tesselator.getInstance();
         BufferBuilder builder = tesselator.getBuilder();
 
-        // Используем тот же формат, что и в шейдере — POSITION_COLOR_TEX
         builder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR_TEX);
         builder.vertex(matrix, 0, height, 0).color(1f, 1f, 1f, 1f).uv(0, 0).endVertex();
         builder.vertex(matrix, width, height, 0).color(1f, 1f, 1f, 1f).uv(1, 0).endVertex();
